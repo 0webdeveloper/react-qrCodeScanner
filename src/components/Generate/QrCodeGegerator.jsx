@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import {QRCodeSVG} from 'qrcode.react';
-import './style.css';
+import '../../style.css';
 
 export const QrCodeGegerator = () => {
     const [value, setValue] = useState('');

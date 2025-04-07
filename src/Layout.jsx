@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom";
-import { QrCodeGegerator } from './QrCodeGegerator';
-import { QrCodeScanner } from './QrCodeScanner';
-import { Navigation } from './Navigation';
+import { QrCodeGegerator } from './components/Generate/QrCodeGegerator';
+import { QrCodeScanner } from './components/Scan/qrCodeScanner';
+import { Navigation } from './components/Navigation/Navigation';
 
 const Layout = () => {
     return (
