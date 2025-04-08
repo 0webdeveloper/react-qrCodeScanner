@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # React + Vite
 
 # react-qrCodeScanner
