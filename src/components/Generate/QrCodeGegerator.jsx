@@ -8,11 +8,27 @@ export const QrCodeGegerator = () => {
     const [result, setResult] = useState('');
 
     const onClickHandler = () => {
+        const currentDate = new Date();
+        const readableDate = currentDate.toLocaleDateString('ru-RU', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+            hour: '2-digit',
+            minute: '2-digit',
+            second: '2-digit',
+            hour12: false // Установите true для 12-часового формата
+        });
+
+        const dataToStore = {
+            value,
+            createdAt: readableDate // Добавляем дату создания
+        };
+        
         localStorage.setItem(
             GENERATE_DATA,
             JSON.stringify([
                 ...(JSON.parse(localStorage.getItem(GENERATE_DATA)) || []), 
-                value
+                dataToStore
             ])
         );
         setResult(value);

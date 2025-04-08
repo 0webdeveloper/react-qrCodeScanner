@@ -7,6 +7,8 @@ export const Navigation = () => {
                 <li><Link to="/">Домой</Link></li>
                 <li><Link to="/generator">Генерировать qrCode</Link></li>
                 <li><Link to="/scanner">Сканировать qrCode</Link></li>
+                <li><Link to="/generateHistory">История генераций</Link></li>
+                <li><Link to="/generateScan">История сканирования</Link></li>
             </ul>
         </nav>
     );
