@@ -34,7 +34,7 @@ export const QrCodeScanner = () => {
                         audio: false
                     }}
                     styles={{
-                        container: {width: 350, border: '1px solid #000', borderRadius: 10}
+                        container: {minWidth: 340, maxWidth: 600, height:600, border: '1px solid #d3d3d3', borderRadius: 5}
                     }}
                     onScan={(result) => scanHandler}
                 />
