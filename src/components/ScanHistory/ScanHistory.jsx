@@ -1,17 +1,13 @@
 import { SCAN_DATA } from "../../constants";
 import { QRCodeSVG } from 'qrcode.react';
-import { useState } from 'react';
+import { useQRHistory } from '../../hooks/useQRHistory';
 
 export const ScanHistory = () => {
 
-    const [historyData, setHistoryData] = useState(
-        JSON.parse(localStorage.getItem(SCAN_DATA)) || []
-    );
-
+    const { history: historyData, removeFromHistory } = useQRHistory(SCAN_DATA);
+    
     const removeLine = (index) => {
-        const updateData = historyData.filter((_, i) => i !== index);
-        localStorage.setItem(SCAN_DATA, JSON.stringify(updateData));
-        setHistoryData(updateData);
+        removeFromHistory(index);
     }
     
     return (

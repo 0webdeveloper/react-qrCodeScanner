@@ -2,39 +2,20 @@ import { useState } from 'react';
 import {QRCodeSVG} from 'qrcode.react';
 import '../../style.css';
 import { GENERATE_DATA } from '../../constants';
+import { useQRHistory } from '../../hooks/useQRHistory';
 
 export const QrCodeGegerator = () => {
     const [value, setValue] = useState('');
     const [result, setResult] = useState('');
+    const { addToHistory } = useQRHistory(GENERATE_DATA);
 
     const onClickHandler = () => {
         if (value.trim() === '') {
             setValue('');
             return;
         }
-        const currentDate = new Date();
-        const readableDate = currentDate.toLocaleDateString('ru-RU', {
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric',
-            hour: '2-digit',
-            minute: '2-digit',
-            second: '2-digit',
-            hour12: false
-        });
-
-        const dataToStore = {
-            value,
-            createdAt: readableDate
-        };
         
-        localStorage.setItem(
-            GENERATE_DATA,
-            JSON.stringify([
-                ...(JSON.parse(localStorage.getItem(GENERATE_DATA)) || []), 
-                dataToStore
-            ])
-        );
+        addToHistory(value);
         setResult(value); 
         setValue('');
     };
