@@ -15,12 +15,10 @@ export const QrCodeScanner = () => {
             addToHistory(rawValue);
         }
     };
-
-    console.log({setScanned});
     
 
     return (
-        <div className="container mx-auto max-w-8xl ">
+        <div className="container mx-auto max-w-8xl px-8">
             <div className="flex flex-col items-center justify-center gap-2">
                 <h2 className="text-2xl font-bold">Отсканируйте QR code </h2>
                 <Scanner 
@@ -35,7 +33,7 @@ export const QrCodeScanner = () => {
                     onScan={scanHandler}
                 />
 
-                <p>{scanned}</p>
+                <p className="mt-8 font-semibold text-2xl">{scanned}</p>
             </div>
         </div>
     )

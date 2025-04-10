@@ -30,10 +30,10 @@ export const QrCodeGegerator = () => {
 
     return (
         <div className="container mx-auto max-w-8xl my-6">
-            <div className="grid place-items-center h-[calc(100dvh-88px)]">
+            <div className="grid place-items-center pb-12">
                 
                 {result === '' && (
-                       <div className="flex justify-center items-center gap-4">
+                       <div className="flex flex-wrap justify-center items-center gap-4">
                             <input 
                                 type="text"
                                 placeholder="Введите текст"
