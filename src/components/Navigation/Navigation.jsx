@@ -4,11 +4,11 @@ export const Navigation = () => {
     const location = useLocation();
 
     const navLinks = [
-        { path: '/react-qrCodeScanner/', label: 'Главная' },
-        { path: '/react-qrCodeScanner/generator', label: 'Генерировать qrCode' },
-        { path: '/react-qrCodeScanner/scanner', label: 'Сканировать qrCode' },
-        { path: '/react-qrCodeScanner/generateHistory', label: 'История генераций' },
-        { path: '/react-qrCodeScanner/scanHistory', label: 'История сканирования' },
+        { path: '/', label: 'Главная' },
+        { path: '/generator', label: 'Генерировать qrCode' },
+        { path: '/scanner', label: 'Сканировать qrCode' },
+        { path: '/generateHistory', label: 'История генераций' },
+        { path: '/scanHistory', label: 'История сканирования' },
     ];
 
     return (
